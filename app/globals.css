@@ -1,0 +1,72 @@
+:root {
+  --black: #0D0D0D;
+  --cream: #F2E8D5;
+  --magenta: #FF2D6B;
+  --gold: #FFD166;
+  --muted: #3A3A3A;
+  --card: #1A1A1A;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display), cursive;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+@keyframes wobble {
+  0%,100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes strikethrough {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade { animation: fadeSlideIn 0.4s ease both; }
+.animate-pop { animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both; }
